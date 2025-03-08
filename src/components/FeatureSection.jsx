@@ -28,8 +28,9 @@ const FeatureSection = () => {
                 <motion.div
                     className='p-2 lg:basis-2/5'
                     initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}>
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}>
                     <p className='text-4xl font-bold text-[#242d52] mb-8'>What's different about Manage?</p>
                     <p className='text-[#9095a7] text-left mb-8 leading-6.5'>Manage provides all the  functionality your <br />team needs, without the complexity. Our <br /> software is tailor-made for modern digital <br /> product teams.</p>
                 </motion.div>
@@ -37,10 +38,11 @@ const FeatureSection = () => {
                     {features.map((feature, index) => (
                         <motion.div
                             key={feature.id}
-                            className='flex justify-between mb-10 lg:gap-10 gap-3'
+                            className="flex justify-between mb-10 gap-10"
                             initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.2 }}>
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.2 }}
+                            viewport={{ once: true }}>
                             <div>
                                 <Button text={feature.id} primary={true} />
                             </div>
